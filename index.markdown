@@ -4,4 +4,7 @@
 
 layout: home
 ---
-Hello there
+
+
+<!-- <section id="robotimg">
+</section> -->

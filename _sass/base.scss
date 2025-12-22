@@ -3,9 +3,9 @@
 @import 'bootstrap/functions';
 
 // custom variables
-$primary: #0094aa;
-$stt: #e57626ff;
-$sta: #4285f4;
+$primary: #ae0202;
+// $stt: #e57626ff;
+// $sta: #4285f4;
 $instagram: #C13584;
 $fullblack: #000000;
 $github: #333;
@@ -22,8 +22,8 @@ $font-family-base: "Google Sans Code", monospace;
 
 
 $custom-theme-colors: (
-    "stt": $stt,
-    "sta": $sta,
+    // "stt": $stt,
+    // "sta": $sta,
     "instagram": $instagram,
     "fullblack": $fullblack,
     "github": $github,
@@ -119,24 +119,24 @@ nav a.router-link-exact-active {
   }
 }
 
-.active.ftc {
-  background-color: var(--bs-primary) !important;
-}
+// .active.ftc {
+//   background-color: var(--bs-primary) !important;
+// }
 
-.stt:active, .stt.active {
-  background-color: var(--bs-stt) !important;
-}
+// .stt:active, .stt.active {
+//   background-color: var(--bs-stt) !important;
+// }
 
-.sta:active, .sta.active {
-  background-color: var(--bs-sta) !important;
-}
+// .sta:active, .sta.active {
+//   background-color: var(--bs-sta) !important;
+// }
 
 .dropdown-menu{
   position:absolute;
   z-index: -1;
 }
 
-.navbar .navbar-nav>li>a {
+.navbar .navbar-nav>li>a, .navbar-brand {
   padding: 15px;
   margin-bottom: -2px;
 }

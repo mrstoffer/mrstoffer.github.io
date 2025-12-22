@@ -4,9 +4,9 @@ layout: default
 
 <div class="home">
 
-  <div id="banner" class="border-5 border-bottom border-primary">
+  <div id="banner" class="border-5 border-bottom border-primary bg-dark">
     <div class="landing-text">
-      <h1 class="pb-5">FTC Stanislascollege</h1>
+      <h1 class="pb-5">Mr_Stoffer</h1>
       <!-- <h3 class="d-none d-md-block">Stanislas Tech Team en Stanislas Tech Academy</h3> -->
       <a href="#welcome" class="btn btn-outline-primary arrowbtn mt-5">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
@@ -20,18 +20,18 @@ layout: default
     <div class="container-fluid bg-primary text-light">
       <div class="row justify-content-md-center">
         <div class="col-12 col-md-6 text-center">
-          <h1>Wie zijn wij?</h1>
+          <h1>Mr_Stoffer</h1>
           <hr class="my-4"/>
         </div>
       </div>
       <div class="row justify-content-md-center">
         <div class="col-12 col-md-9 text-center">
-          <p class="lead">Wij zijn de robotica teams van het Stanislascollege Westplantsoen in Delft, die meedoen aan de First Tech Challenge. Onze teams bestaan uit 14-18 jarige leerlingen uit de bovenbouw van HAVO en VWO.</p>
+          <p class="lead">the mister that stofs</p>
         </div>
       </div>
       <div class="row justify-content-md-center">
         <div class="col-12 col-md-9 text-center mt-4">
-          <a href="/about" class="btn btn-outline-light text-light">Lees meer over ons</a>
+          <a href="/about" class="btn btn-outline-light text-light">More about me</a>
         </div>
       </div>
       <!-- <Waypoint @change="initCounters">
@@ -40,84 +40,20 @@ layout: default
     </div>
   </section>
 
-  <section id="teams">
-    <div class="container-fluid d-none d-lg-block" style="padding-top: 0; padding-bottom:0">
-      <div class="row justify-content-md-center">
-        <div class="col-12 col-lg-6 text-center px-0 py-5 bg-stt">
-          <div class="row justify-content-md-center">
-            <div class="col-12 col-md-10 col-xxl-8 text-center">
-              <h3 class="border-start border-5 border-black my-0 px-3"><strong>Stanislas Tech Team</strong></h3>
-              <h4 class="border-start border-5 border-black px-3">#3977</h4>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-6 text-center px-0 py-5 bg-sta text-light">
-          <div class="row justify-content-md-center">
-            <div class="col-12 col-md-10 col-xxl-8 text-center">
-              <h3 class="border-end border-5 border-white my-0 px-3"><strong>Stanislas Tech Academy</strong></h3>
-              <h4 class="border-end border-5 border-white px-3">#13953</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- <div class="container-fluid" style="padding-bottom: 0;">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-6 text-center">
-          <router-link to="/about" class="btn btn-primary text-light">Lees meer</router-link>
-        </div>
-      </div>
-    </div> -->
-  </section>
-
-  <!-- <section id="ftc">
-    <div class="container-fluid">
-      <div class="row justify-content-md-center">
-        <div class="col-12 col-md-6 text-center">
-          <h1>Wat is FTC?</h1>
-          <hr class="my-4"/>
-        </div>
-      </div>
-      <div class="row justify-content-md-center">
-        <div class="col-12 col-md-9 text-center">
-          <p class="lead">FTC staat voor First Tech Challenge, en wordt georganiseerd door de organisatie FIRST. Het doel van deze competitie is om jongeren enthousiast te maken voor techniek. Dit doen ze met een roboticawedstrijd waarin teams een robot moeten bouwen die bepaalde opdrachten kan uitvoeren. Maar FTC gaat niet alleen om de robot zelf, belangrijk is ook het verspreiden van de gedachte van FIRST door middel van outreach</p>
-          <br>
-          <a href="https://www.firstinspires.org/robotics/ftc" class="btn btn-primary text-light">Lees meer over FTC</a>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- <section id="countdown">
-    <div class="container-fluid border-bottom border-primary border-5">
-      <div class="row justify-content-md-center my-4">
-        <Countdown/>
-      </div>
-    </div>
-  </section> -->
-
-  <section id="news">
+  <section id="blog">
     <div class="container-fluid border-top border-primary border-5">
       <div class="row justify-content-md-center">
         <div class="col-12 col-md-6 text-center">
-          <h1>Laatste nieuws</h1>
+          <h1>Blog</h1>
         </div>
       </div>
     </div>
-    <!-- <div class="container-fluid" style="padding-top: 0; padding-bottom:0">
-      <div class="row justify-content-center">
-        <div v-for="post in posts.slice(0, 3)" :key="post.slug" class="col-8 col-md-6 col-xxl-2 text-center mb-3">
-          <NewsCard :post="post"/>
-        </div>
-      </div>
-    </div> -->
     {%- if site.posts.size > 0 -%}
     <div class="container-fluid" style="padding-top: 0; padding-bottom:0">
       <div class="row justify-content-center">
         <div class="col-12 col-md-6 col-lg-4 mb-4">
           <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
-          <!-- <ul class="post-list">
+          <ul class="post-list">
             {%- for post in site.posts -%}
             <li>
               {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -132,8 +68,8 @@ layout: default
               {%- endif -%}
             </li>
             {%- endfor -%}
-          </ul> -->
-        {%- for post in site.posts -%}
+          </ul>
+        <!-- {%- for post in site.posts -%}
           <div class="card mb-3 h-100">
             <img src="/assets/images/card.png" class="card-img-top" alt="...">
             <div class="card-body text-start">
@@ -148,12 +84,12 @@ layout: default
           </div>
           {%- endfor -%}
         </div>
-      <div>
+      <div> -->
     </div>
     <div class="container-fluid" style="padding-top: 0;">
       <div class="row justify-content-center">
         <div class="col-12 col-md-6 text-center">
-          <router-link id="to-news" to="/news" class="btn btn-primary text-light">Meer nieuws</router-link>
+          <router-link id="to-blog" to="/blog" class="btn btn-primary text-light">More posts</router-link>
         </div>
       </div>
     </div>
@@ -168,7 +104,6 @@ layout: default
 
 <style scoped>
 #banner {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/images/banner.jpeg) no-repeat center center fixed;
   display: table;
   position: relative;
   width: 100%;

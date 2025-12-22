@@ -92,58 +92,6 @@ html {
   padding: .50em;
 }
 
-nav {
-  padding: 30px;
-}
-
-.nav-link {
-  font-weight: bold;
-//   color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-
-@media (min-width: 992px) {
-  .border-primary .active, .border-primary .nav-link:hover {
-    background-color: var(--bs-primary);
-  }
-  .navbar {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  .nav-link {
-    padding-top: 100%;
-    padding-bottom: 100%;
-  }
-}
-
-// .active.ftc {
-//   background-color: var(--bs-primary) !important;
-// }
-
-// .stt:active, .stt.active {
-//   background-color: var(--bs-stt) !important;
-// }
-
-// .sta:active, .sta.active {
-//   background-color: var(--bs-sta) !important;
-// }
-
-.dropdown-menu{
-  position:absolute;
-  z-index: -1;
-}
-
-.navbar .navbar-nav>li>a, .navbar-brand {
-  padding: 15px;
-  margin-bottom: -2px;
-}
-.navbar .navbar-brand {
-  padding-top: 0px;
-}
-
 /* header {
   position: fixed;
   width: 100%;

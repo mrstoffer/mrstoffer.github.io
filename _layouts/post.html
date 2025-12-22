@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<article class="page" itemscope itemtype="http://schema.org/BlogPosting">
+  <section class="title">
+    <div class="container-fluid bg-primary text-light">
+      <div class="row justify-content-md-center">
+        <div class="col-12 col-md-6 text-center">
+          <h1>{{ page.title | escape }}</h1>
+          <h5 class="d-none d-md-block">
+            <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+              {{ page.date | date: date_format }}
+            </time>
+            {%- if page.author -%}
+              • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+            {%- endif -%}
+          </h5>
+          <a class="btn btn-light text-dark" href="/news"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+          </svg> 
+          Terug
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="content container-fluid container my-4">
+    {{ content }}
+  </section>
+</article>

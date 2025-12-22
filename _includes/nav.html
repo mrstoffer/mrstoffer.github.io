@@ -1,0 +1,52 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark border-bottom border-5 border-primary py-0">
+  {%- assign default_paths = site.pages | map: "path" -%}
+  {%- assign page_paths = site.header_pages | default: default_paths -%}
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://stanislascollegewestplantsoen.nl">
+      <img src="/assets/images/logo-westplantsoen.png" alt="" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <!-- <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+        <li class="nav-item dropdown">
+        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Onze teams
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item ftc" href="/">Main site</a></li>
+          <li><a class="dropdown-item stt" href="/">Stanislas Tech Team</a></li>
+          <li><a class="dropdown-item sta" href="/">Stanislas Tech Academy</a></li>
+        </ul>
+      </li>
+      </ul> -->
+      
+      <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+        {%- if page_paths -%}
+          <li class="nav-item">
+            <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="/">Home</a>
+          </li>
+          {%- for path in page_paths -%}
+            {%- assign my_page = site.pages | where: "path", path | first -%}
+            {%- if my_page.title -%}
+            <li class="nav-item">
+              <a class="nav-link {% if page.url == my_page.url %}active{% endif %}" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+            </li>
+            {%- endif -%}
+          {%- endfor -%}
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">Over ons</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/news">Nieuws</a>
+          </li> -->
+        {%- endif -%}
+      </ul>
+    </div>
+  </div>
+</nav>

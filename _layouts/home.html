@@ -1,0 +1,219 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <div id="banner" class="border-5 border-bottom border-primary">
+    <div class="landing-text">
+      <h1 class="pb-5">FTC Stanislascollege</h1>
+      <!-- <h3 class="d-none d-md-block">Stanislas Tech Team en Stanislas Tech Academy</h3> -->
+      <a href="#welcome" class="btn btn-outline-primary arrowbtn mt-5">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <section id="welcome">
+    <div class="container-fluid bg-primary text-light">
+      <div class="row justify-content-md-center">
+        <div class="col-12 col-md-6 text-center">
+          <h1>Wie zijn wij?</h1>
+          <hr class="my-4"/>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-12 col-md-9 text-center">
+          <p class="lead">Wij zijn de robotica teams van het Stanislascollege Westplantsoen in Delft, die meedoen aan de First Tech Challenge. Onze teams bestaan uit 14-18 jarige leerlingen uit de bovenbouw van HAVO en VWO.</p>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-12 col-md-9 text-center mt-4">
+          <a href="/about" class="btn btn-outline-light text-light">Lees meer over ons</a>
+        </div>
+      </div>
+      <!-- <Waypoint @change="initCounters">
+        
+      </Waypoint> -->
+    </div>
+  </section>
+
+  <section id="teams">
+    <div class="container-fluid d-none d-lg-block" style="padding-top: 0; padding-bottom:0">
+      <div class="row justify-content-md-center">
+        <div class="col-12 col-lg-6 text-center px-0 py-5 bg-stt">
+          <div class="row justify-content-md-center">
+            <div class="col-12 col-md-10 col-xxl-8 text-center">
+              <h3 class="border-start border-5 border-black my-0 px-3"><strong>Stanislas Tech Team</strong></h3>
+              <h4 class="border-start border-5 border-black px-3">#3977</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 text-center px-0 py-5 bg-sta text-light">
+          <div class="row justify-content-md-center">
+            <div class="col-12 col-md-10 col-xxl-8 text-center">
+              <h3 class="border-end border-5 border-white my-0 px-3"><strong>Stanislas Tech Academy</strong></h3>
+              <h4 class="border-end border-5 border-white px-3">#13953</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="container-fluid" style="padding-bottom: 0;">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6 text-center">
+          <router-link to="/about" class="btn btn-primary text-light">Lees meer</router-link>
+        </div>
+      </div>
+    </div> -->
+  </section>
+
+  <!-- <section id="ftc">
+    <div class="container-fluid">
+      <div class="row justify-content-md-center">
+        <div class="col-12 col-md-6 text-center">
+          <h1>Wat is FTC?</h1>
+          <hr class="my-4"/>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-12 col-md-9 text-center">
+          <p class="lead">FTC staat voor First Tech Challenge, en wordt georganiseerd door de organisatie FIRST. Het doel van deze competitie is om jongeren enthousiast te maken voor techniek. Dit doen ze met een roboticawedstrijd waarin teams een robot moeten bouwen die bepaalde opdrachten kan uitvoeren. Maar FTC gaat niet alleen om de robot zelf, belangrijk is ook het verspreiden van de gedachte van FIRST door middel van outreach</p>
+          <br>
+          <a href="https://www.firstinspires.org/robotics/ftc" class="btn btn-primary text-light">Lees meer over FTC</a>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- <section id="countdown">
+    <div class="container-fluid border-bottom border-primary border-5">
+      <div class="row justify-content-md-center my-4">
+        <Countdown/>
+      </div>
+    </div>
+  </section> -->
+
+  <section id="news">
+    <div class="container-fluid border-top border-primary border-5">
+      <div class="row justify-content-md-center">
+        <div class="col-12 col-md-6 text-center">
+          <h1>Laatste nieuws</h1>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="container-fluid" style="padding-top: 0; padding-bottom:0">
+      <div class="row justify-content-center">
+        <div v-for="post in posts.slice(0, 3)" :key="post.slug" class="col-8 col-md-6 col-xxl-2 text-center mb-3">
+          <NewsCard :post="post"/>
+        </div>
+      </div>
+    </div> -->
+    {%- if site.posts.size > 0 -%}
+    <div class="container-fluid" style="padding-top: 0; padding-bottom:0">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
+          <!-- <ul class="post-list">
+            {%- for post in site.posts -%}
+            <li>
+              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+              <span class="post-meta">{{ post.date | date: date_format }}</span>
+              <h3>
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                  {{ post.title | escape }}
+                </a>
+              </h3>
+              {%- if site.show_excerpts -%}
+                {{ post.excerpt }}
+              {%- endif -%}
+            </li>
+            {%- endfor -%}
+          </ul> -->
+        {%- for post in site.posts -%}
+          <div class="card mb-3 h-100">
+            <img src="/assets/images/card.png" class="card-img-top" alt="...">
+            <div class="card-body text-start">
+              <h5 class="card-title">{{ post.title }}</h5>
+              {%- if site.show_excerpts -%}
+                <p class="card-text">{{ post.excerpt }}</p>
+              {%- endif -%}
+              <a class="card-link" href="{{ post.url | relative_url }}">
+                Lees meer
+              </a>
+            </div>
+          </div>
+          {%- endfor -%}
+        </div>
+      <div>
+    </div>
+    <div class="container-fluid" style="padding-top: 0;">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6 text-center">
+          <router-link id="to-news" to="/news" class="btn btn-primary text-light">Meer nieuws</router-link>
+        </div>
+      </div>
+    </div>
+
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    {%- endif -%}
+  </section>
+
+  <section id="robotimg">
+  </section>
+</div>
+
+<style scoped>
+#banner {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/images/banner.jpeg) no-repeat center center fixed;
+  display: table;
+  position: relative;
+  width: 100%;
+  height: 100vh !important;
+  background-size: cover;
+}
+
+@media (min-width: 992px) {
+  #banner {
+    height: 60vh !important;
+  }
+}
+
+.landing-text {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+}
+
+section .container-fluid {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+.arrowbtn:hover {
+  color: var(--bs-light) !important;
+} 
+
+#robotimg {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/images/robots.jpeg) no-repeat center center fixed;
+  display: table;
+  height: 40%;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+}
+
+.accstt:not(.collapsed) {
+  color: var(--bs-dark) !important;
+  background-color: var(--bs-stt) !important;
+}
+
+.accsta:not(.collapsed) {
+  background-color: var(--bs-sta) !important;
+}
+</style>

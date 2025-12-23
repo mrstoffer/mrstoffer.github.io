@@ -4,6 +4,7 @@
 
 // custom variables
 $primary: #ae0202;
+$secondary: #1a1a1a;
 // $stt: #e57626ff;
 // $sta: #4285f4;
 $instagram: #C13584;
@@ -45,25 +46,36 @@ $utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
 
 
 body { 
-    margin: 0 !important;
-    height: 100%;
-    width: 100%;
-    // font-family: Avenir, Helvetica, Arial, sans-serif; 
-    // font-family: Verdana, Geneva, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50; 
+  margin: 0 !important;
+  height: 100%;
+  width: 100%;
+  // font-family: Avenir, Helvetica, Arial, sans-serif; 
+  // font-family: Verdana, Geneva, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // color: #2c3e50; 
 }
 
 html {
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+svg {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: calc(1em + 1vw);
+  }
 }
 
 #app {
-    color: black;
-    height: 100%;
+  color: black;
+  height: 100%;
 }
 
 /* .page {

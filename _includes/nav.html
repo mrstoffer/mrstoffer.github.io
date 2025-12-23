@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark border-bottom border-5 border-primary py-0">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-secondary border-bottom border-5 border-primary py-0">
   {%- assign default_paths = site.pages | map: "path" -%}
   {%- assign page_paths = site.header_pages | default: default_paths -%}
   <div class="container-fluid">
@@ -10,7 +10,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+      <ul class="navbar-nav ms-auto mt-0 mt-lg-0">
         {%- if page_paths -%}
           <li class="nav-item">
             <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="/">Home</a>
@@ -48,11 +48,12 @@
   align-items: stretch !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  height: 100%;
 }
 
-nav {
+/* nav {
   padding: 30px;
-}
+} */
 
 .nav-link {
   font-weight: bold;
@@ -74,6 +75,16 @@ nav a.router-link-exact-active {
   .nav-link {
     padding-top: 100%;
     padding-bottom: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  
+  .navbar-nav .nav-link.active {
+    background-color: #AE0202;
+    color: #FFF !important;
+    font-weight: bold;
+    width: 100%; 
   }
 }
 

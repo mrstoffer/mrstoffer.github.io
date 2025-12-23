@@ -4,7 +4,7 @@ layout: default
 
 <div class="home">
 
-  <div id="banner" class="border-5 border-bottom border-primary bg-dark">
+  <div id="banner" class="border-5 border-bottom border-primary bg-secondary">
     <div class="landing-text">
       <h1 class="pb-5">Mr_Stoffer</h1>
       <!-- <h3 class="d-none d-md-block">Stanislas Tech Team en Stanislas Tech Academy</h3> -->
@@ -16,29 +16,7 @@ layout: default
     </div>
   </div>
 
-  <section id="welcome">
-    <div class="container-fluid bg-primary text-light">
-      <div class="row justify-content-md-center">
-        <div class="col-12 col-md-6 text-center">
-          <h1>Mr_Stoffer</h1>
-          <hr class="my-4"/>
-        </div>
-      </div>
-      <div class="row justify-content-md-center">
-        <div class="col-12 col-md-9 text-center">
-          <p class="lead">the mister that stofs</p>
-        </div>
-      </div>
-      <div class="row justify-content-md-center">
-        <div class="col-12 col-md-9 text-center mt-4">
-          <a href="/about" class="btn btn-outline-light text-light">More about me</a>
-        </div>
-      </div>
-      <!-- <Waypoint @change="initCounters">
-        
-      </Waypoint> -->
-    </div>
-  </section>
+  {{ content }}
 
   <section id="blog">
     <div class="container-fluid border-top border-primary border-5">
@@ -49,11 +27,11 @@ layout: default
       </div>
     </div>
     {%- if site.posts.size > 0 -%}
-    <div class="container-fluid" style="padding-top: 0; padding-bottom:0">
+    <div class="container-fluid p-5">
       <div class="row justify-content-center">
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="col-12 col-lg-6 col-xl-4 mb-4">
           <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
-          <ul class="post-list">
+          <!-- <ul class="post-list">
             {%- for post in site.posts -%}
             <li>
               {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -68,23 +46,29 @@ layout: default
               {%- endif -%}
             </li>
             {%- endfor -%}
-          </ul>
-        <!-- {%- for post in site.posts -%}
+          </ul> -->
+        {%- for post in site.posts -%}
           <div class="card mb-3 h-100">
-            <img src="/assets/images/card.png" class="card-img-top" alt="...">
+            {%- if post.image -%}
+            <img class="card-img-top" src="/assets/images/card.png" style="height: 400px;">
+            {%- else -%}
+            <div class="card-img-top bg-dark" style="height: 300px;"></div>
+            {%- endif -%}
             <div class="card-body text-start">
               <h5 class="card-title">{{ post.title }}</h5>
+              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+              <h6 class="card-subtitle mb-2 text-body-secondary">{{ post.date | date: date_format }}</h6>
               {%- if site.show_excerpts -%}
                 <p class="card-text">{{ post.excerpt }}</p>
               {%- endif -%}
               <a class="card-link" href="{{ post.url | relative_url }}">
-                Lees meer
+                Read more
               </a>
             </div>
           </div>
           {%- endfor -%}
         </div>
-      <div> -->
+      <div>
     </div>
     <div class="container-fluid" style="padding-top: 0;">
       <div class="row justify-content-center">

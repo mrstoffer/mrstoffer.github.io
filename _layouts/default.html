@@ -6,13 +6,14 @@
   <link rel="stylesheet" href="/assets/css/styles.css">
   <!-- <link rel="stylesheet" href="/assets/css/bootstrap.css"> -->
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
   {% include nav.html %}
   <main>
     <div id="app">
       {{ content }}
     </div>
   </main>
+  {% include footer.html %}
   <script src="/assets/js/bootstrap.bundle.js"></script>
   <script src="/assets/js/main.js"></script>
 </body>

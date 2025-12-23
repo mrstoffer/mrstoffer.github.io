@@ -25,6 +25,7 @@ collections:
     create: true
     editor:
       preview: false
+    folder: '/'
     fields:
       - { label: 'Title', name: 'title', widget: 'string', default: 'about' }
       - { label: 'Layout', name: 'layout', widget: 'string', default: 'about' }

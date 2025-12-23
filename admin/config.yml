@@ -5,7 +5,7 @@ local_backend: true
 backend:
   name: github
   repo: mrstoffer/mrstoffer.github.io
-  base-url: https://sveltia-cms-auth.mrstoffer.workers.dev
+  base_url: https://sveltia-cms-auth.mrstoffer.workers.dev
 media_folder: 'assets/uploads'
 collections:
   - name: 'blog'

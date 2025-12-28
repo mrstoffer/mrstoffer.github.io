@@ -1,18 +1,19 @@
 ---
 layout: default
 ---
-
 <div class="page">
   <section class="title">
-    <div class="container-fluid bg-secondary text-light border-bottom border-5 border-primary">
+    <div class="container-fluid bg-primary text-light border-bottom border-5 border-primary">
       <div class="row justify-content-md-center">
         <div class="col-12 col-md-6 text-center">
+          {% if page.breadcrumbs %}{% include breadcrumbs.html %}{% endif %}
           <h1>{{ page.title | escape }}</h1>
+          {%- if page.subtitle -%}
+          <h3 class="d-none d-md-block mt-4 mb-0">{{ page.subtitle || escape }}</h3>
+          {%- endif -%}
         </div>
       </div>
     </div>
   </section>
-  <section class="content container my-4">
-    {{ content }}
-  </section>
+  {{ content }}
 </div>

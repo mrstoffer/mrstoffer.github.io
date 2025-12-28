@@ -1,21 +1,48 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-secondary border-bottom border-5 border-primary py-0">
+<nav class="navbar shadow-lg fixed-top navbar-expand-lg navbar-dark bg-secondary border-bottom border-5 border-primary py-0">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
       Mr_Stoffer
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav ms-auto mt-0 mt-lg-0">
-          <li class="nav-item">
-            <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="/">Home</a>
-          </li>
-          {%- for item in site.data.navigation -%}
-            <li class="nav-item">
-              <a class="nav-link {% if page.url == my_page.url %}active{% endif %}" href="{{ item.link }}">{{ item.name }}</a>
+          {%- for item in site.navigation -%}
+            {%- assign link_slash = item.link | append: "/" -%}
+            {%- assign active_class = "" -%}
+            {%- if item.link == "/" -%}
+              {%- if page.url == "/" -%}
+                {%- assign active_class = "active" -%}
+              {%- endif -%}
+            {%- else -%}
+              {%- if page.url contains item.link -%}
+                {%- assign active_class = "active" -%}
+              {%- endif -%}
+            {%- endif -%}
+            {% if item.collection %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle {{active_class}}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ item.name }}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item {% if page.url == item.link or page.url == link_slash %}active{% endif %}" href="{{ item.link }}">All {{ item.name | downcase }}</a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                {% for category in site[item.collection] %}
+                <li>
+                  <a class="dropdown-item {% if page.url == category.url %}active{% endif %}" href="{{ category.url }}">{{ category.title }}</a>
+                </li>
+                {%- endfor -%}
+              </ul>
             </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link {{active_class}}" href="{{ item.link }}">{{ item.name }}</a>
+            </li>
+            {% endif %}
           {%- endfor -%}
       </ul>
     </div>
@@ -33,7 +60,7 @@
   align-items: center;
   justify-content: center;
   padding: 0 15px !important;
-  line-height: 1 !important;  /* Collapses the invisible text bounding box */
+  line-height: 1 !important;
   height: auto;
 }
 
@@ -58,7 +85,7 @@ nav a.router-link-exact-active {
 }
 
 @media (min-width: 992px) {
-  .border-primary .active, .border-primary .nav-link:hover {
+  .border-primary .nav-link.active, .border-primary .nav-link:hover {
     background-color: var(--bs-primary);
   }
   .navbar {
@@ -81,18 +108,6 @@ nav a.router-link-exact-active {
   }
 }
 
-/* .active.ftc {
-  background-color: var(--bs-primary) !important;
-}
-
-.stt:active, .stt.active {
-  background-color: var(--bs-stt) !important;
-}
-
-.sta:active, .sta.active {
-  background-color: var(--bs-sta) !important;
-} */
-
 .dropdown-menu{
   position:absolute;
   z-index: -1;
@@ -104,5 +119,18 @@ nav a.router-link-exact-active {
 }
 .navbar .navbar-brand {
   padding-top: 0px;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(174,2,2, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border: none;
+  border-radius: 0;
+}
+.custom-toggler.navbar-toggler:focus,.custom-toggler.navbar-toggler:active {
+   outline: none !important;
+   box-shadow: none;
 }
 </style>

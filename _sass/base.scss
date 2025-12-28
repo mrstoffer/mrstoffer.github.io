@@ -11,8 +11,13 @@ $instagram: #C13584;
 $fullblack: #000000;
 $github: #333;
 $youtube:#FF0000;
+$dropdown-bg: $secondary;
+$dropdown-link-color: #FFF;
+$dropdown-link-hover-bg: $primary;
+$dropdown-link-active-bg: $primary;
 
-$font-family-base: "Google Sans Code", monospace;
+
+$headings-font-family: "Google Sans Code", monospace;
 // $font-family-sans-serif: Verdana, Geneva, sans-serif;
 
 @import 'bootstrap/variables';
@@ -60,16 +65,29 @@ html {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+  // font-size: 18px;
 }
 
 svg {
-  width: 1em;
-  height: 1em;
+  width: 1rem;
+  height: 1rem;
 }
 
 @media (max-width: 991px) {
   html {
     font-size: calc(1em + 1vw);
+  }
+}
+
+@media (max-width: 1119px) {
+  .cards {
+    max-width: 820px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    max-width: 1240px !important;
   }
 }
 
@@ -97,11 +115,24 @@ svg {
 }
 
 .content .container-fluid {
-    max-width: 1200px;
+  max-width: 1200px;
 }
 
 .notify {
   padding: .50em;
+}
+
+.navbar, .btn {
+  font-family: $headings-font-family !important;
+}
+
+.card-subtitle, svg, .badge {
+  font-family: $font-family-base !important;
+}
+
+a.badge {
+  text-decoration: none;
+  font-weight: normal;
 }
 
 /* header {

@@ -6,8 +6,7 @@ layout: default
 
   <div id="banner" class="border-5 border-bottom border-primary bg-secondary">
     <div class="landing-text">
-      <h1 class="pb-5">Mr_Stoffer</h1>
-      <!-- <h3 class="d-none d-md-block">Stanislas Tech Team en Stanislas Tech Academy</h3> -->
+      <h1 class="pb-5 text-primary">Mr_Stoffer</h1>
       <a href="#welcome" class="btn btn-outline-primary arrowbtn mt-5">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -22,52 +21,17 @@ layout: default
     <div class="container-fluid border-top border-primary border-5">
       <div class="row justify-content-md-center">
         <div class="col-12 col-md-6 text-center">
-          <h1>Blog</h1>
+          <h1>Latest posts</h1>
+          <hr class="mt-4"/>
         </div>
       </div>
     </div>
     {%- if site.posts.size > 0 -%}
-    <div class="container-fluid p-5">
+    <div class="container-fluid pb-0 pt-0 cards">
       <div class="row justify-content-center">
         {%- for post in site.posts -%}
         <div class="col-12 col-lg-6 col-xl-4 mb-4">
-          <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
-          <!-- <ul class="post-list">
-            {%- for post in site.posts -%}
-            <li>
-              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-              <span class="post-meta">{{ post.date | date: date_format }}</span>
-              <h3>
-                <a class="post-link" href="{{ post.url | relative_url }}">
-                  {{ post.title | escape }}
-                </a>
-              </h3>
-              {%- if site.show_excerpts -%}
-                {{ post.excerpt }}
-              {%- endif -%}
-            </li>
-            {%- endfor -%}
-          </ul> -->
-          
-          <div class="card mb-3">
-            {%- if post.image -%}
-            <img class="card-img-top" src="/assets/images/card.png" style="height: 400px;">
-            {%- else -%}
-            <div class="card-img-top bg-dark" style="height: 300px;"></div>
-            {%- endif -%}
-            <div class="card-body text-start">
-              <h5 class="card-title">{{ post.title }}</h5>
-              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-              <h6 class="card-subtitle mb-2 text-body-secondary">{{ post.date | date: date_format }}</h6>
-              {%- if site.show_excerpts -%}
-                <p class="card-text">{{ post.excerpt }}</p>
-              {%- endif -%}
-              <a class="card-link" href="{{ post.url | relative_url }}">
-                Read more
-              </a>
-            </div>
-          </div>
-          
+          {% include card.html post=post %}
         </div>
         {%- endfor -%}
       <div>
@@ -75,16 +39,12 @@ layout: default
     <div class="container-fluid" style="padding-top: 0;">
       <div class="row justify-content-center">
         <div class="col-12 col-md-6 text-center">
-          <router-link id="to-blog" to="/blog" class="btn btn-primary text-light">More posts</router-link>
+          <a id="to-blog" href="/archive" class="btn btn-primary text-light mb-2">More posts</a> <br/>
+          <!-- <a class="rss-subscribe btn btn-outline-primary" href="{{ "/feed.xml" | relative_url }}">Subscribe via RSS</a> -->
         </div>
       </div>
     </div>
-
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
     {%- endif -%}
-  </section>
-
-  <section id="robotimg">
   </section>
 </div>
 

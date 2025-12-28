@@ -1,0 +1,62 @@
+---
+layout: page
+title: Post archive
+subtitle: "Search all posts by tag"
+---
+
+<section class="content">
+  <div class="container-fluid">
+    {% for tag in site.tags %}
+    {% assign tag_name = tag | first %}
+    {% assign tag_title = tag_name | replace: "_", " " | capitalize %}
+    {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+    <!-- <div class="content container my-4 text-center">
+      <h3>{{ tag_title }}</h3>
+      <hr class="my-4">
+    </div>
+    <div class="container-fluid cards">
+      <div class="row justify-content-center">
+        {%- for post in site.tags[tag_name] -%}
+        <div class="col-12 col-lg-6 col-xl-4 mb-4">
+          {% include card.html post=post %}
+        </div>
+        {%- endfor -%}
+      </div>
+    </div> -->
+    <div class="card my-4" id="{{ tag_name | slugize }}">
+      <div class="card-header">
+        <span class="badge text-bg-primary">{{ tag_title }}</span>
+      </div>
+      <ul class="list-group list-group-flush">
+        <!-- <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li> -->
+        {%- for post in site.tags[tag_name] -%}
+        <li class="list-group-item">
+          <figure>
+            <blockquote class="blockquote">
+              <p><a href="{{ post.url | relative_url }}">{{ post.title }}</a></p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              {{ post.date | date: date_format }}
+            </figcaption>
+          </figure>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+<style scoped>
+section .container-fluid {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+.badge {
+  font-size: 1.25rem;
+}
+</style>

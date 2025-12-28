@@ -1,0 +1,47 @@
+---
+layout: page
+title: Projects
+subtitle: "All posts about projects"
+breadcrumbs: true
+---
+<!-- <section>
+  <div class="container-fluid bg-primary text-light">
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-9 text-center">
+        <p class="lead">the mister that stofs</p>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-9 text-center mt-4">
+        <a class="rss-subscribe btn btn-outline-light" href="{{ "/feed.xml" | relative_url }}">Subscribe via RSS</a>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- <hr class="my-4"> -->
+<section>
+  {% for project in site.projects %}
+  {% assign project_posts = site.posts | where_exp: "item", "item.categories contains project.slug" %}
+  <div class="content container my-4 text-center">
+    <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
+    <hr class="my-4">
+  </div>
+  <div class="container-fluid cards">
+    <div class="row justify-content-center">
+      {%- for post in project_posts -%}
+      <div class="col-12 col-lg-6 col-xl-4 mb-4">
+        {% include card.html post=post %}
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+  {%- endfor -%}
+</section>
+
+<style scoped>
+section .container-fluid {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 100%;
+}
+</style>

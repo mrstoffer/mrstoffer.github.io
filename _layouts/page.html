@@ -10,6 +10,7 @@ layout: default
           <h1>{{ page.title | escape }}</h1>
           {%- if page.subtitle -%}
           <h3 class="d-none d-md-block mt-4 mb-0">{{ page.subtitle || escape }}</h3>
+          <p class="d-block d-md-none lead mt-4 mb-0">{{ page.subtitle || escape }}</p>
           {%- endif -%}
           {%- if page.skipbtn -%}
           <a href="{{ page.skipbtn }}" class="btn btn-outline-light d-lg-none mt-4 mb-0">

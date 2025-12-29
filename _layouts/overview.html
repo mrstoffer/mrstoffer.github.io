@@ -5,9 +5,11 @@ layout: page
   <div class="row justify-content-center mt-4">
     {%- for post in site.posts -%}
     {% assign page_category = page.categories | first %}
+    {% if post.categories contains page_category %}
     <div class="col-12 col-lg-6 col-xl-4 mb-4">
       {% include card.html post=post %}
     </div>
+    {% endif %}
     {%- endfor -%}
   <div>
 </div>

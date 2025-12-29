@@ -1,18 +1,10 @@
 ---
 layout: page
-title: About
+title: About me
+skipbtn: "#text"
 ---
 <section class="content container my-4" markdown="1">
-  This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+  I am Christopher, an Electrical Engineering student at TU Delft, currently in the 2nd year of the bachelors. My special interests lay in computer engineering and chip design, robotics and control/automation, and possibly signal processing (still exploring that path!). 
 
-  You can find the source code for Minima at GitHub:
-  [jekyll][jekyll-organization] /
-  [minima](https://github.com/jekyll/minima)
-
-  You can find the source code for Jekyll at GitHub:
-  [jekyll][jekyll-organization] /
-  [jekyll](https://github.com/jekyll/jekyll)
-
-
-  [jekyll-organization]: https://github.com/jekyll
+  **Mr_Stoffer** is the online name I've taken on years ago during high school, after an old "friend" called me that for a few days as a joke.
 </section>

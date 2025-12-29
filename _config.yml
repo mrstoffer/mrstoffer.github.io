@@ -49,6 +49,9 @@ navigation:
   - name: Projects
     link: /projects
     collection: projects
+  - name: Student Life
+    link: /life
+    collection: life
 
 # Build settings
 theme: minima

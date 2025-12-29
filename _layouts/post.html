@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<article class="page" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="page" itemscope itemtype="http://schema.org/BlogPosting">
   <section class="title">
     <div class="container-fluid {%unless page.image%}bg-secondary {%endunless%}border-5 border-bottom border-primary text-light">
       <div class="row justify-content-md-center align-items-center">
@@ -36,10 +36,10 @@ layout: default
       <p class="lead">{{ page.excerpt | strip_html }}</p>
     </div>
   </section>
-  <section id="content" class="content container-fluid container my-4">
+  <article id="content" class="content container-fluid container my-4">
     {{ content | remove: page.excerpt }}
-  </section>
-</article>
+  </article>
+</div>
 
 <style scoped>
 {% if page.image %}

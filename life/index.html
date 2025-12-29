@@ -1,0 +1,32 @@
+---
+layout: page
+title: "Student Life"
+subtitle: "All posts about my student life"
+breadcrumbs: true
+---
+<section>
+  {% for life in site.life %}
+  {% assign life_posts = site.posts | where_exp: "item", "item.categories contains life.slug" %}
+  <div class="content container my-4 text-center">
+    <h3><a href="{{ life.url }}">{{ life.title }}</a></h3>
+    <hr class="my-4">
+  </div>
+  <div class="container-fluid cards">
+    <div class="row justify-content-center">
+      {%- for post in life_posts -%}
+      <div class="col-12 col-lg-6 col-xl-4 mb-4">
+        {% include card.html post=post %}
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+  {%- endfor -%}
+</section>
+
+<style scoped>
+section .container-fluid {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 100%;
+}
+</style>

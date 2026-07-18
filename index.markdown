@@ -9,13 +9,13 @@ layout: home
   <div class="container-fluid bg-primary text-light">
     <div class="row justify-content-md-center">
       <div class="col-12 col-md-6 text-center">
-        <h1>Hi, I am Christopher</h1>
+        <h1>Hey there, nice to meet you</h1>
         <hr class="my-4"/>
       </div>
     </div>
     <div class="row justify-content-md-center">
       <div class="col-12 col-md-9 text-center">
-        <p class="lead">A TU Delft EE student with interests in computers, robotics, and occasionally aerospace. Join me into 2026 as I discover myself and explore various new activities and possibly a major step in life.</p>
+        <p class="lead">I'm <strong>Christopher</strong>, an <strong>Electrical Engineering BSc</strong> student at <strong>TU Delft</strong>. If it involves a computer, chances are I'm into it. From hardware descriptions to software systems, I enjoy building things and solving problems with code and electronics.</p>
       </div>
     </div>
     <div class="row justify-content-md-center">

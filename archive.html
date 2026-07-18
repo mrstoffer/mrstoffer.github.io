@@ -27,23 +27,25 @@ subtitle: "Search all posts by tag"
       <div class="card-header">
         <span class="badge text-bg-primary">{{ tag_title }}</span>
       </div>
-      <ul class="list-group list-group-flush">
-        <!-- <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li> -->
+      <div class="list-group list-group-flush">
         {%- for post in site.tags[tag_name] -%}
-        <li class="list-group-item">
-          <figure>
+        <a href="{{ post.url | relative_url }}" class="list-group-item list-group-item-action">
+          <div class="d-flex justify-content-between">
+            <h5 class="mb-1"><strong>{{ post.title }}</strong></h5>
+            <small>{{ post.date | date: date_format }}</small>
+          </div>
+          <p class="mb-1">{{ post.excerpt }}</p>
+          <!-- <figure>
             <blockquote class="blockquote">
               <p><a href="{{ post.url | relative_url }}">{{ post.title }}</a></p>
             </blockquote>
             <figcaption class="blockquote-footer">
               {{ post.date | date: date_format }}
             </figcaption>
-          </figure>
-        </li>
+          </figure> -->
+        </a>
         {%- endfor -%}
-      </ul>
+      </div>
     </div>
     {%- endfor -%}
   </div>

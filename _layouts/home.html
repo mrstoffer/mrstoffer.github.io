@@ -6,7 +6,12 @@ layout: default
 
   <div id="banner" class="border-5 border-bottom border-primary bg-secondary">
     <div class="landing-text">
-      <h1 class="pb-5 text-primary">Mr_Stoffer</h1>
+      <h1 class="pb-5 text-primary"><strong>Christopher Kusumo</strong></h1>
+      <h3 class="pb-5 text-primary">A.k.a Mr_Stoffer</h3>
+      <h4 class="d-block">
+        <span class="badge text-bg-primary">BSc Electrical Engineering @ TU Delft</span>
+        <span class="badge text-bg-primary">Minor @ UWaterloo</span>
+      </h4>
       <a href="#welcome" class="btn btn-outline-primary arrowbtn mt-5">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -16,6 +21,36 @@ layout: default
   </div>
 
   {{ content }}
+
+  <section id="projects">
+    <div class="container-fluid border-top border-primary border-5">
+      <div class="row justify-content-md-center">
+        <div class="col-12 col-md-6 text-center">
+          <h1>Featured Projects</h1>
+          <hr class="mt-4"/>
+        </div>
+      </div>
+    </div>
+    {%- if site.posts.size > 0 -%}
+    <div class="container-fluid pb-0 pt-0 cards">
+      <div class="row justify-content-center">
+        {%- for post in site.posts -%}
+        <div class="col-12 col-lg-6 col-xl-4 mb-4">
+          {% include card.html post=post %}
+        </div>
+        {%- endfor -%}
+      <div>
+    </div>
+    <div class="container-fluid" style="padding-top: 0;">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6 text-center">
+          <a id="to-blog" href="/projects" class="btn btn-primary text-light mb-2">View all projects</a> <br/>
+          <!-- <a class="rss-subscribe btn btn-outline-primary" href="{{ "/feed.xml" | relative_url }}">Subscribe via RSS</a> -->
+        </div>
+      </div>
+    </div>
+    {%- endif -%}
+  </section>
 
   <section id="blog">
     <div class="container-fluid border-top border-primary border-5">
@@ -28,11 +63,34 @@ layout: default
     </div>
     {%- if site.posts.size > 0 -%}
     <div class="container-fluid pb-0 pt-0 cards">
-      <div class="row justify-content-center">
+      <!-- <div class="row justify-content-center">
         {%- for post in site.posts -%}
         <div class="col-12 col-lg-6 col-xl-4 mb-4">
           {% include card.html post=post %}
         </div>
+        {%- endfor -%}
+      <div> -->
+      <div class="row justify-content-center">
+        <div class="list-group list-group-flush mb-4">
+          {%- for post in site.posts -%}
+          <a href="{{ post.url | relative_url }}" class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between">
+              <h5 class="mb-1"><strong>{{ post.title }}</strong></h5>
+              <small>{{ post.date | date: date_format }}</small>
+            </div>
+            <p class="mb-1">{{ post.excerpt }}</p>
+            <!-- <figure>
+              <blockquote class="blockquote">
+                <p><a href="{{ post.url | relative_url }}">{{ post.title }}</a></p>
+              </blockquote>
+              <figcaption class="blockquote-footer">
+                {{ post.date | date: date_format }}
+              </figcaption>
+            </figure> -->
+          </a>
+          {%- endfor -%}
+        </div>
+        {%- for post in site.posts -%}
         {%- endfor -%}
       <div>
     </div>

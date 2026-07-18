@@ -5,12 +5,12 @@
 // custom variables
 $primary: #ae0202;
 $secondary: #1a1a1a;
-// $stt: #e57626ff;
-// $sta: #4285f4;
-$instagram: #C13584;
+// $dark: #000000;
+$instagram: #FF0069;
 $fullblack: #000000;
 $github: #333;
 $youtube:#FF0000;
+$linkedin: #0A66C2;
 $dropdown-bg: $secondary;
 $dropdown-link-color: #FFF;
 $dropdown-link-hover-bg: $primary;
@@ -28,12 +28,11 @@ $headings-font-family: "Google Sans Code", monospace;
 
 
 $custom-theme-colors: (
-    // "stt": $stt,
-    // "sta": $sta,
-    "instagram": $instagram,
-    "fullblack": $fullblack,
-    "github": $github,
-    "youtube": $youtube,
+  "instagram": $instagram,
+  "fullblack": $fullblack,
+  "github": $github,
+  "youtube": $youtube,
+  "linkedin": $linkedin
 );
 
 @import 'bootstrap/maps';
@@ -92,7 +91,7 @@ svg {
 }
 
 #app {
-  color: black;
+  // color: black;
   height: 100%;
 }
 

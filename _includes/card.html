@@ -2,7 +2,7 @@
   {%- if include.post.image -%}
   <div class="card-img-top" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ include.post.image | relative_url }}'); background-size: cover; background-position:center"></div>
   {%- else -%}
-  <div class="card-img-top bg-dark"></div>
+  <div class="card-img-top bg-secondary"></div>
   {%- endif -%}
   <div class="card-body text-start d-flex flex-column">
     <h5 class="card-title">{{ include.post.title }}</h5>
@@ -20,7 +20,7 @@
     {%- if site.show_excerpts and include.post.excerpt -%}
       <p class="card-text excerpt">{{ include.post.excerpt | strip_html }}</p>
     {%- endif -%}
-    <a class="card-link mt-auto" href="{{ include.post.url | relative_url }}">
+    <a class="card-link mt-auto stretched-link" href="{{ include.post.url | relative_url }}">
       Read more
     </a>
   </div>

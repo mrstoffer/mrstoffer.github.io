@@ -102,10 +102,10 @@ layout: home
 <section id="blog" class="d-block d-lg-none">
 <ul class="nav nav-underline my-3 mx-3 justify-content-center" id="nav-tab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="nav-projects-tab" data-bs-toggle="tab" data-bs-target="#nav-projects" type="button" role="tab" aria-controls="nav-projects" aria-selected="true"><h5>Featured Projects</h5></button>
+    <button class="nav-link active" id="nav-projects-tab" data-bs-toggle="tab" data-bs-target="#nav-projects" type="button" role="tab" aria-controls="nav-projects" aria-selected="true"><h5>Projects</h5></button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="nav-posts-tab" data-bs-toggle="tab" data-bs-target="#nav-posts" type="button" role="tab" aria-controls="nav-posts" aria-selected="false"><h5>Latest Posts</h5></button>
+    <button class="nav-link" id="nav-posts-tab" data-bs-toggle="tab" data-bs-target="#nav-posts" type="button" role="tab" aria-controls="nav-posts" aria-selected="false"><h5>Posts</h5></button>
   </li>
 </ul>
 <div class="tab-content mx-3 mb-3" id="nav-tabContent">

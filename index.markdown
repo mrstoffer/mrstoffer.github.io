@@ -45,8 +45,8 @@ layout: home
         {%- if site.posts.size > 0 -%}
         <div class="row justify-content-center">
           {%- for post in site.posts -%}
-          <div class="col-6">
-            {% include card.html post=post %}
+          <div class="col-12">
+            {% include cardv2.html post=post %}
           </div>
           {%- endfor -%}
         </div>
@@ -159,11 +159,6 @@ section .container-fluid {
   padding-bottom: 40px;
   width: 100%;
 }
-
-/* #projects > .container-fluid:first-child {
-  /* padding-top: 0; */
-  /* margin-bottom: 40px; */
-} */
 
 .arrowbtn:hover {
   color: var(--bs-light) !important;

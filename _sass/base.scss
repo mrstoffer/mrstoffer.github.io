@@ -72,11 +72,11 @@ svg {
   height: 1rem;
 }
 
-@media (max-width: 991px) {
-  html {
-    font-size: calc(1em + 1vw);
-  }
-}
+// @media (max-width: 991px) {
+//   html {
+//     font-size: calc(1em + 1vw);
+//   }
+// }
 
 @media (max-width: 1119px) {
   .cards {
